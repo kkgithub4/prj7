@@ -1,0 +1,44 @@
+1. What is our objective
+A.) Developed the uvm environment to verify the given below scenario.
+    Scenario:Generating a packet of any size with proper formating(18 bytes to 10K Bytes)
+	         Driving the generated packet as pet the user Tx Interface: Sop, Eop, data_valid,bytes[63:0],tx_error
+	
+2. HDL/Methodology used 
+A.)UVM
+
+3. What is there ?
+A.) All components of uvm environment except dut,monitor and scoreboard
+    As we don't have monitor, in this scenario need to depend on driver and interface, packet will be displayed from driver in log,
+	and also need to check on interface for packet format.
+	
+4. What is not there?
+A.) Scoreboard and monitor are  not available , as it is making complicating to run on eda playground, 
+    and if licensed tools are available, these two components will have been developed which increases robustness.
+
+5. Any block diagram?
+A.) No
+
+6. List of files
+A.) "eth_if.sv";
+    "trans.sv";
+    "seq_trans.sv";
+    "driver_c.sv";
+    "sequencer_c.sv";
+    "agent_c.sv";
+    "env.sv";
+    "base_test.sv";
+    "sample_test.sv";
+    "testbench.sv";
+
+7. Simulator used,Version
+A.)edaplayground
+
+8. Results
+A.) For results this code should be run on licensed tools. As of now this should be validated on waveforms as below. 
+    Format of packet will be "sop--><data(17 bytes to 10,000 variable data)---> eop " .
+    [63:0] tx_data	will be validated with respect to [7:0]  data_valid;
+	Each bit in data_valid will represent 1byte of tx_data.So,
+	for example data_valid[0] == 1'b1, then tx_data[7:0] are valid , similarly if data_valid[1] ==1'b1 then tx_data[15:0] are valid.....so on 
+	            data_valid[0] == 1'b0, then tx_data[7:0] are not valid... so on.
+	
+	
