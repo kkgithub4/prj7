@@ -31,7 +31,7 @@ A.) "eth_if.sv";
     "testbench.sv";
 
 7. Simulator used,Version
-A.)edaplayground
+A.)edaplayground( synopsis vcs)
 
 8. Results
 A.) For results this code should be run on licensed tools. As of now this should be validated on waveforms as below. 
