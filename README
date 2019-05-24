@@ -38,7 +38,7 @@ A.) For results this code should be run on licensed tools. As of now this should
     Format of packet will be "sop--><data(17 bytes to 10,000 variable data)---> eop " .
     [63:0] tx_data	will be validated with respect to [7:0]  data_valid;
 	Each bit in data_valid will represent 1byte of tx_data.So,
-	for example data_valid[0] == 1'b1, then tx_data[7:0] are valid , similarly if data_valid[1] ==1'b1 then tx_data[15:0] are valid.....so on 
+	for example data_valid[0] == 1'b1, then tx_data[7:0] are valid, similarly if data_valid[1] ==1'b1 then tx_data[15:0] are valid.....so on 
 	            data_valid[0] == 1'b0, then tx_data[7:0] are not valid... so on.
 	
 	
